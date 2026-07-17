@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Karnataka Mystery Trail</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="app-header">
+    <h1>Karnataka Mystery Trail</h1>
+    <div class="score-bar">
+      <span>Score: <strong id="score-display">0</strong></span>
+      <span>Solved: <strong id="solved-display">0</strong></span>
+    </div>
+  </header>
+
+  <main id="app">
+
+    <!-- SCREEN 1: Level select -->
+    <section id="levels-screen" class="screen active">
+      <p class="subtitle">Pick a district to explore</p>
+      <div id="levels-container"></div>
+    </section>
+
+    <!-- SCREEN 2: Mystery gameplay -->
+    <section id="mystery-screen" class="screen">
+      <button id="back-to-levels" class="text-btn">&larr; Districts</button>
+      <div class="progress-dots" id="progress-dots"></div>
+
+      <div class="card mystery-card">
+        <div class="difficulty-tag" id="difficulty-tag"></div>
+        <p id="intro-text" class="intro-text"></p>
+        <div id="hints-container"></div>
+
+        <input type="text" id="guess-input" placeholder="Your guess..." autocomplete="off" />
+        <button id="submit-guess" class="primary-btn">Guess</button>
+
+        <div class="row-btns">
+          <button id="hint-btn" class="secondary-btn">Get a hint (-20 pts)</button>
+          <button id="giveup-btn" class="secondary-btn">Give up</button>
+        </div>
+
+        <div id="feedback" class="feedback"></div>
+        <div id="facts-box" class="facts-box" style="display:none;"></div>
+      </div>
+    </section>
+
+    <!-- SCREEN 3: Level complete -->
+    <section id="complete-screen" class="screen">
+      <div class="card complete-card">
+        <h2>🎉 District Cleared!</h2>
+        <p id="complete-summary"></p>
+        <button id="next-level-btn" class="primary-btn">Continue</button>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
