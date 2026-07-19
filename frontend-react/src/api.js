@@ -1,4 +1,4 @@
-const API_BASE = "http://localhost:8000";
+const API_BASE = "https://karnataka-yatra.onrender.com";
 
 export async function getLevels() {
   const res = await fetch(`${API_BASE}/levels`);
